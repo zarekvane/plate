@@ -1,0 +1,37 @@
+.feature_span_wrapper {
+    background: wheat;
+    width: 600px;
+    height: 600px;
+    display: flex;
+    justify-content: flex-start;
+    flex-flow: row wrap;
+    overflow: auto;
+}
+
+.feature_span {
+    width: fit-content;
+    height: fit-content;
+    padding: 3px;
+    margin: 3px;
+    font-size: 14px;
+    color: #fff;
+    border-radius: 10%;
+    background: #1db859;
+}
+
+.feature_span .close {
+    border: none;
+    border-radius: 10%;
+    background: none;
+    color: wheat;
+    cursor: pointer;
+
+    transition: all 200ms;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+}
+
+.feature_span .close:hover {
+    color: #fb7299;
+}

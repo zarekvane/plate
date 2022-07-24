@@ -1,0 +1,87 @@
+@import url(mainframe.css);
+@import url(searchform.css);
+@import url(common/popup.css);
+@import url(common/avatar.css);
+@import url(common/table.css);
+
+.tbl_toolbar {
+    display: flex;
+    margin: 10px;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+}
+
+.tbl_toolbar button {
+    background: #fb7299;
+    color: #fff;
+    font-size: 16px;
+    box-sizing: border-box;
+    padding: 8px;
+    border-radius: 10px;
+    margin: 10px 10px;
+}
+
+.popup {
+    min-height: 280px;
+}
+
+.popup form {
+    display: flex;
+    flex-flow: row wrap;
+    justify-items: flex-end;
+    justify-content: space-between;
+}
+
+.popup .left {
+    margin: auto 0;
+    margin-right: 20px;
+}
+
+.avatar_control {
+    cursor: pointer;
+}
+
+.popup .right {
+    display: flex;
+    justify-content: space-around;
+    flex-flow: column wrap;
+    margin-left: 20px;
+}
+
+.popup .right .form_line {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 3px;
+    align-items: center;
+}
+
+.popup .right input,
+.popup .right select {
+    width: 12em;
+    height: 2em;
+
+    border: none;
+    color: #e3a095;
+    border-radius: 5px;
+    font-size: 16px;
+    padding: 0 2px;
+}
+
+.right input:focus,
+.right select:focus {
+    border: solid 1px #fb7299;
+}
+
+.popup .btn_ok {
+    background: #fb7299;
+    border-radius: 8px;
+    width: 70px;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+    padding: 6px;
+    float: right;
+    margin: 10px 0;
+}

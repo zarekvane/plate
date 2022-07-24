@@ -1,0 +1,27 @@
+@import url(common/reset.css);
+@import url(common/sidebar.css);
+@import url(common/scrollbar.css);
+
+body {
+    background: url(../images/bg.jpg) no-repeat top scroll;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#content {
+    position: fixed;
+    top: 20px;
+    right: 10px;
+    bottom: 20px;
+    left: calc(18% + 10px);
+
+    display: flex;
+    flex-direction: column;
+
+    background: rgba(255, 255, 255, 0.25);
+    box-sizing: border-box;
+
+    border-radius: 10px;
+
+    overflow: auto;
+}

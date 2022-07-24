@@ -1,0 +1,67 @@
+@import url(mainframe.css);
+@import url(searchform.css);
+@import url(common/popup.css);
+@import url(common/avatar.css);
+@import url(common/table.css);
+
+.popup {
+    /* min-height: 580px; */
+    margin-top: 20px;
+}
+
+.popup form {
+    display: flex;
+    flex-flow: row wrap;
+    justify-items: flex-end;
+    justify-content: space-between;
+}
+
+.popup .right {
+    margin: auto 0;
+    margin-left: 20px;
+}
+
+.popup .left {
+    display: flex;
+    justify-content: space-around;
+    flex-flow: column wrap;
+    /* text-align: center; */
+}
+
+.popup .left .form_line {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 3px;
+    align-items: center;
+}
+
+.popup .left input,
+.popup .left select {
+    width: 12em;
+    height: 2em;
+
+    border: none;
+    color: #e3a095;
+    border-radius: 5px;
+    font-size: 16px;
+    padding: 0 2px;
+}
+
+.left input:focus,
+.left select:focus {
+    border: solid 1px #fb7299;
+}
+
+.popup .btn_ok {
+    background: #fb7299;
+    border-radius: 8px;
+    width: 70px;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+    padding: 6px;
+    float: right;
+    margin: 10px 0;
+}

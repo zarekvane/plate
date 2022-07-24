@@ -1,0 +1,59 @@
+@import url(mainframe.css);
+@import url(common/table.css);
+
+.tbl_toolbar {
+    margin: 10px;
+}
+
+.tbl_toolbar button {
+    float: right;
+    background: #fb7299;
+    color: #fff;
+    font-size: 16px;
+    box-sizing: border-box;
+    padding: 8px 18px;
+    border-radius: 10px;
+    margin: 10px 20px;
+}
+
+.tbl_wrapper tr {
+    height: 40px;
+}
+
+.tbl_wrapper tr input {
+    border-radius: 5px;
+    border: none;
+    box-sizing: border-box;
+    margin-right: 5px;
+    background: none;
+    font-size: 1em;
+    width: 5em;
+    padding: 4px;
+    box-sizing: border-box;
+    color: paleturquoise;
+    cursor: text;
+    text-overflow: ellipsis;
+}
+
+.tbl_wrapper tr input:focus {
+    background: #fff;
+    color: black;
+}
+
+.tbl_wrapper td {
+    height: inherit;
+}
+
+.tbl_wrapper td img {
+    height: 100%;
+    cursor: pointer;
+}
+
+.tbl_wrapper td img:hover {
+    position: absolute;
+    height: 90%;
+    right: 5%;
+    top: 10%;
+
+    overflow: auto;
+}

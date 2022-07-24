@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>后台管理</title>
+  <link rel="stylesheet" href="css/user.css">
+</head>
+
+<body>
+  <div id="wrap">
+    <div id="sidebar">
+      <a href="#"><img src="images/logo.png" class="logo" alt="" /></a>
+      <div class="message">
+        <p>欢迎您：<span id="span_admin_name_sidebar">管理员1号</span></p>
+      </div>
+      <ul id="sidenav" class="action">
+      </ul>
+    </div>
+    <div id="content">
+      <div id="search_wrapper"></div>
+      <div class="tbl_toolbar">
+        <button id="btn_add_user" type="button">添加用户</button>
+      </div>
+
+      <div class="tbl_wrapper">
+        <table id="tbl_users">
+          <thead>
+            <tr>
+              <th class="tbl_id">学号/教职工号</th>
+              <th class="tbl_name">姓名</th>
+              <th class="tbl_identity">身份</th>
+              <th class="tbl_operation">操作</th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+    </div>
+  </div>
+  <!-- popup-->
+  <div id="edit_user_dlg" class="popup-effect">
+    <div class="popup">
+      <form action="#" id="form_edit_user">
+        <div class="left">
+          <div id="avatar_wrapper"></div>
+        </div>
+
+        <div class="right">
+          <div class="form_line">
+            <label for="input_edit_id">学号/教职工号：</label>
+            <input type="text" name="id" id="input_edit_id" />
+          </div>
+
+          <div class="form_line">
+            <label for="input_edit_name">姓名：</label>
+            <input type="text" name="name" id="input_edit_name" />
+          </div>
+
+          <div class="form_line">
+            <label for="select_edit_identity">身份：</label>
+            <select name="identity" id="select_edit_identity">
+              <option value="0">学生</option>
+              <option value="1">老师</option>
+            </select>
+          </div>
+
+          <div class="form_line">
+            <label for="input_edit_phone">手机：</label>
+            <input type="tel" name="phone" id="input_edit_phone" />
+          </div>
+
+          <div class="form_line">
+            <label for="input_edit_nickname">昵称：</label>
+            <input type="tel" name="nickname" id="input_edit_nickname" />
+          </div>
+
+          <div class="form_line">
+            <label for="input_edit_address">联系地址：</label>
+            <input type="tel" name="address" id="input_edit_address" />
+          </div>
+
+          <div class="form_line">
+            <label for="input_edit_password">用户密码：</label>
+            <input type="text" name="password" id="input_edit_password" />
+          </div>
+        </div>
+      </form>
+      <button id="btn_confirm_user" class="btn_ok">确定</button>
+      <a class="close" href="#">&times;</a>
+    </div>
+  </div>
+  <!-- //popup -->
+</body>
+
+<script src="js/common/common.js"></script>
+<script src="js/common/sidebar.js"></script>
+<script src="js/common/table.js"></script>
+<script src="js/common/avatar.js"></script>
+<script src="js/searchform.js"></script>
+<script src="js/user.js"></script>
+
+</html>

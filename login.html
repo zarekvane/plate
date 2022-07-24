@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>登录</title>
+  <link rel="stylesheet" href="css/common/reset.css" />
+  <link rel="stylesheet" href="css/login.css" />
+</head>
+
+<body>
+  <div id="wrap">
+    <img src="images/logo.png" class="logo" alt="" />
+    <p>
+      <label for="input_user_id">用户名</label>
+      <input type="text" id="input_user_id" placeholder="请输入用户名" />
+      <span class="tips">请输入正确的用户名</span>
+    </p>
+    <p>
+      <label for="input_password">密码</label>
+      <input type="password" id="input_password" placeholder="请输入密码" />
+      <span class="tips">请输入正确的密码</span>
+    </p>
+    <div>
+      <button id="btn_login">登录</button>
+    </div>
+  </div>
+</body>
+
+<script src="js/common/common.js"></script>
+<script src="js/common/encrypt.js"></script>
+<script src="js/login.js"></script>
+
+</html>

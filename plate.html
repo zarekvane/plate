@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>后台管理</title>
+  <link rel="stylesheet" href="css/plate.css">
+</head>
+
+<body>
+  <div id="wrap">
+    <div id="sidebar">
+      <a href="#"><img src="images/logo.png" class="logo" alt="" /></a>
+      <div class="message">
+        <p>欢迎您：<span id="span_admin_name_sidebar">管理员1号</span></p>
+      </div>
+      <ul id="sidenav" class="action">
+      </ul>
+    </div>
+    <div id="content">
+      <div class="tbl_toolbar">
+        <button id="btn_apply" type="button">应用</button>
+      </div>
+
+      <div class="tbl_wrapper">
+        <table id="tbl_plates">
+          <thead>
+            <tr>
+              <th class="tbl_plate_name">餐盘名称</th>
+              <th class="tbl_price">单价/元</th>
+              <th class="tbl_picture">图片</th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+    </div>
+  </div>
+</body>
+
+<script src="js/common/common.js"></script>
+<script src="js/common/sidebar.js"></script>
+<script src="js/common/table.js"></script>
+<script src="js/plate.js"></script>
+
+</html>

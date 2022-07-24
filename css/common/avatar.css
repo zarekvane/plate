@@ -1,0 +1,26 @@
+/** 头像显示框控件 */
+
+.avatar_control {
+    cursor: pointer;
+}
+
+.avatar_preview {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.avatar_control span {
+    display: inline-block;
+    /* cursor: pointer; */
+    margin: 5px;
+}
+
+.avatar_control img {
+    max-width: 100%;
+}
+
+.avatar_contro input[type="file"] {
+    visibility: hidden;
+}

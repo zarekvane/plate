@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <table id="tbl">
+  </table>
+
+</body>
+<script src="js/table.js"></script>
+<script>
+  class User {
+    constructor(name, id) {
+      this.name = name;
+      this.id = id;
+    }
+  }
+
+  let users = [
+    new User(12, 23),
+    new User(14, 23),
+  ];
+
+
+  let domTbl = document.getElementById("tbl");
+  let tbl = new Table(domTbl, users, (tr, user) => {
+    tr.insertCell(0).innerHTML = user.id;
+    tr.insertCell(1).innerHTML = user.name;
+  });
+
+  users.forEach(user => {
+    tbl.insertRow(0, user);
+  });
+
+  tbl.deleteRow(0);
+
+</script>
+
+</html>
