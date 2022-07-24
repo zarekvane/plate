@@ -88,23 +88,26 @@ class AvatarControl {
         this.dom = avatarControl;
     }
 
-    setWebSrc(src) {
+    setWebSrc(src, hasAlert = true) {
         let _this = this;
         this.src = src;
 
         gAjaxImg({
             url: src,
             success: (data) => {
-                _this.img.src = window.URL.createObjectURL(data);
+                _this.img.src = data;
             },
             error: () => {
-                alert(`图片访问失败: ${_this.src}`);
+                if (hasAlert) {
+                    alert(`图片访问失败: ${_this.src}`);
+                }
             },
         });
     }
 
     disable() {
         this.fileInput.setAttribute("disabled", "disabled");
+        this.fileInput.style.display = "none";
     }
 
     enable() {
