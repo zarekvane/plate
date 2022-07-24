@@ -31,8 +31,12 @@ gPlateAvatarControl.disable();
 var gUserAvatarControl = new AvatarControl("用户照片");
 gUserAvatarControl.disable();
 
-document.getElementById("plate_picture_wrapper").appendChild(gPlateAvatarControl.dom);
-document.getElementById("user_avatar_wrapper").appendChild(gUserAvatarControl.dom);
+document
+    .getElementById("plate_picture_wrapper")
+    .appendChild(gPlateAvatarControl.dom);
+document
+    .getElementById("user_avatar_wrapper")
+    .appendChild(gUserAvatarControl.dom);
 
 const domInputOrderId = document.getElementById("input_detail_order_id");
 const domInputUserId = document.getElementById("input_detail_user_id");
@@ -51,7 +55,9 @@ var gSearchForm = new SearchForm({
             gOrderTable.clearAll();
 
             data.data.forEach((e) => {
-                gOrderTable.push(new Order(e.order_number, e.user_id, e.name, e.order_date));
+                gOrderTable.push(
+                    new Order(e.order_number, e.user_id, e.name, e.order_date)
+                );
             });
         }
     },
@@ -102,11 +108,15 @@ function fFillTr(tr, order) {
                 if (data.code == 200) {
                     let idx = tr.rowIndex - 1;
                     gOrderTable.dataList[idx].identity = data.data.identity;
-                    gOrderTable.dataList[idx].totalPlates = data.data.total_plates;
+                    gOrderTable.dataList[idx].totalPlates =
+                        data.data.total_plates;
                     gOrderTable.dataList[idx].amount = data.data.total_price;
-                    gOrderTable.dataList[idx].platePicture = data.data.order_img_url;
+                    gOrderTable.dataList[idx].platePicture =
+                        data.data.order_img_url;
                     gOrderTable.dataList[idx].userAvatar = data.data.avatar_url;
-                    gOrderTable.dataList[idx].description = JSON.stringify(data.data.total_plates);
+                    gOrderTable.dataList[idx].description = JSON.stringify(
+                        data.data.total_plates
+                    );
                     showOrderDeatilDialog(idx);
                 } else {
                     alert(data.data);
@@ -168,7 +178,14 @@ function getOrderList(userId = "", name = "", identity = "") {
         success: function (data) {
             if (data.code == 200) {
                 data.data.forEach((e) => {
-                    gOrderTable.push(new Order(e.order_number, e.user_id, e.name, e.order_date));
+                    gOrderTable.push(
+                        new Order(
+                            e.order_number,
+                            e.user_id,
+                            e.name,
+                            e.order_date
+                        )
+                    );
                 });
 
                 gOrderTable.refresh();
