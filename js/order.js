@@ -147,8 +147,10 @@ function fillOrderDetailDialog(order) {
     domInputDescription.value = order.description;
     domInputAmount.value = order.amount;
 
-    gUserAvatarControl.src = order.userAvatar;
-    gPlateAvatarControl.src = order.platePicture;
+    gUserAvatarControl.setWebSrc(`${ROOT_URL}${order.userAvatar}`, false);
+    gPlateAvatarControl.setWebSrc(`${ROOT_URL}${order.platePicture}`, false);
+    // gUserAvatarControl.src = order.userAvatar;
+    // gPlateAvatarControl.src = order.platePicture;
 }
 
 function showOrderDeatilDialog(idx) {
