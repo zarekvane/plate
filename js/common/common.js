@@ -128,6 +128,9 @@ function setWebImg(img, src) {
         url: src,
         success: (data) => {
             img.src = data;
+            img.onload = function (e) {
+                window.URL.revokeObjectURL(img.src); // 当图片加载完成后清除释放
+            };
         },
     });
 }
