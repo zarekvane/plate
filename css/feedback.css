@@ -1,0 +1,16 @@
+.popup-effect {
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.status_bar {
+    padding: 20px;
+}
+
+.status_bar a {
+    color: chartreuse;
+    font-size: 1em;
+    cursor: pointer;
+    text-decoration: underline;
+    margin-right: 20px;
+}

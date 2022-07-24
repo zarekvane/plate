@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>后台管理</title>
+  <link rel="stylesheet" href="css/common/reset.css">
+  <link rel="stylesheet" href="css/mainframe.css">
+  <link rel="stylesheet" href="css/common/table.css">
+  <link rel="stylesheet" href="css/common/popup.css">
+  <link rel="stylesheet" href="css/feedback.css">
+</head>
+
+<body>
+  <div id="wrap">
+    <div id="sidebar">
+      <a href="#"><img src="images/logo.png" class="logo" alt="" /></a>
+      <div class="message">
+        <p>欢迎您：<span id="span_admin_name_sidebar">管理员1号</span></p>
+      </div>
+      <ul id="sidenav" class="action">
+      </ul>
+    </div>
+
+    <div id="content">
+      <div class="status_bar">
+        <a id="a_read">已读消息(<span id="span_read_num">0</span>)</a>
+        <a id="a_unread">未读消息(<span id="span_unread_num">0</span>)</a>
+      </div>
+
+      <div class="tbl_wrapper">
+        <table id="tbl_feedbacks">
+          <thead>
+            <tr>
+              <th class="tbl_user_id">学号/教职工号</th>
+              <th class="tbl_order_id">订单号</th>
+              <th class="tbl_name">姓名</th>
+              <th class="tbl_identity">身份</th>
+              <th class="tbl_operation">操作</th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+
+      <!-- popup-->
+      <div id="feedback_dlg" class="popup-effect">
+        <div class="popup">
+          <div class="top">
+            <div class="left">
+              <div class="row"><span>反馈时间:</span><input type="text" disabled></div>
+              <div class="row"><span>订单编号:</span><input type="text" disabled></div>
+              <div class="row"><span>订单生成时间:</span><input type="text" disabled></div>
+              <div class="row"><span>学号:</span><input type="text" disabled></div>
+              <div class="row"><span>姓名:</span><input type="text" disabled></div>
+              <div class="row"><span>反馈描述:</span><input type="text" disabled></div>
+              <div class="row"><span>反馈结果:</span><input type="text"></div>
+            </div>
+            <div class="right">
+              <div id="plate_img_wrapper"></div>
+              <div id="user_img_wrapper"></div>
+            </div>
+          </div>
+          <div class="bottom">
+            <span>餐盘详情:</span>
+            <div id="plate_detail_wrapper"></div>
+            <button id="btn_submit">提交</button>
+          </div>
+
+          <a class="close" href="#">&times;</a>
+        </div>
+      </div>
+      <!-- //popup -->
+    </div>
+  </div>
+</body>
+
+<script src="js/common/common.js"></script>
+<script src="js/common/sidebar.js"></script>
+<script src="js/common/table.js"></script>
+<script src="js/feedback.js"></script>
+
+</html>
