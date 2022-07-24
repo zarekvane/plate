@@ -31,7 +31,12 @@
 
 .tbl_wrapper tr {
     border-bottom: solid 0.5px;
-    border-color: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.7), transparent);
+    border-color: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.7),
+        transparent
+    );
 }
 
 .tbl_wrapper th {

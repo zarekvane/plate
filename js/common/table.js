@@ -52,3 +52,11 @@ class Table {
         });
     }
 }
+
+document.querySelectorAll(".tbl_wrapper").forEach((value) => {
+    value.addEventListener("scroll", function () {
+        this.querySelector(
+            "thead"
+        ).style.transform = `translateY(${this.scrollTop}px)`;
+    });
+});
