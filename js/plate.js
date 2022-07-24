@@ -36,8 +36,7 @@ function fFillTr(tr, plate) {
             method: "post",
             data: JSON.stringify({
                 plate_name: plate.plateName,
-                price: plate.price,
-                picture: plate.price,
+                price: priceInput.value,
             }),
             success: (data) => {
                 if (data.code == 200) {
