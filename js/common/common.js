@@ -64,9 +64,9 @@ function gAjaxFiles(params) {
         if (xhr.readyState == 4) {
             if (xhr.status == 200) {
                 success(JSON.parse(xhr.responseText));
+            } else {
+                error(xhr, xhr.status, "");
             }
-        } else {
-            error(xhr, xhr.status, "");
         }
     };
 
