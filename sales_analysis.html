@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>销售分析</title>
+  <link rel="stylesheet" href="css/sales_analysis.css">
+  <script src="assets/echarts.min.js"></script>
+</head>
+
+<body>
+  <div id="wrap">
+    <div id="sidebar">
+      <a href="#"><img src="images/logo.png" class="logo" alt="" /></a>
+      <div class="message">
+        <p>欢迎您：<span id="span_admin_name_sidebar">管理员1号</span></p>
+      </div>
+      <ul id="sidenav" class="action">
+      </ul>
+    </div>
+    <div id="content">
+      <!-- 销售分析 -->
+      <div class="part part_one">
+        <div class="day">
+          <h1 id="day_amount" class="num">0</h1>
+          <div class="tip">今日营业额</div>
+        </div>
+        <div class="day">
+          <h1 id="day_number" class="num">0</h1>
+          <div class="tip">今日消费单数</div>
+        </div>
+        <div class="day">
+          <h1 id="day_compare" class="num">0%</h1>
+          <div class="tip">营业额与昨日的比较</div>
+        </div>
+      </div>
+
+      <div class="part part_two">
+        <div id="week_amount" class="week" style="width: 600px;height:400px;">
+          <!-- 一周营业额的曲线图 -->
+        </div>
+        <div id="week_number" class="week" style="width: 600px;height:400px;">
+          <!-- 一周消费单数的曲线图 -->
+        </div>
+      </div>
+      <div class="part part_three">
+        <div id="month_amount" class="month" style="width: 600px;height:400px;">
+          <!-- 一月营业额的曲线图 -->
+        </div>
+        <div id="month_number" class="month" style="width: 600px;height:400px;">
+          <!-- 一月消费单数的曲线图 -->
+        </div>
+      </div>
+      <div class="part part_four">
+        <div id="day_plate_amount" class="plate" >一日内各种盘子的销量</div>
+        <div id="week_plate_amount" class="plate">一周内各种盘子的销量</div>
+        <div id="month_plate_amount" class="plate" style="width: 100%;height:400px;">一月内各种盘子的销量</div>
+        <div id="total_plate_amount" class="plate" style="width: 100%;height:400px;">所有的各种盘子的销量</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- popup-->
+  <div id="order_detail_dlg" class="popup-effect">
+    <div class="popup"></div>
+  </div>
+  <!-- //popup -->
+</body>
+
+<script src="js/common/common.js"></script>
+<script src="js/common/sidebar.js"></script>
+<script src="js/sales_analysis.js"></script>
+
+</html>

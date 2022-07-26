@@ -222,7 +222,7 @@ domBtnConfirmUser.onclick = function () {
                     name: domInputName.value,
                     identity: parseInt(domSelectIdentity.options[domSelectIdentity.selectedIndex].value),
                     avatar_url: avatarControl.src,
-                },
+                }, 
             ]),
             success: (data) => {
                 alert(data.data);

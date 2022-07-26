@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>消息发布</title>
+  <!-- <link rel="stylesheet" href="css/mainframe.css"> -->
+  <link rel="stylesheet" href="css/msg_release.css">
+</head>
+
+<body>
+  <div id="wrap">
+    <div id="sidebar">
+      <a href="#"><img src="images/logo.png" class="logo" alt="" /></a>
+      <div class="message">
+        <p>欢迎您：<span id="span_admin_name_sidebar">管理员1号</span></p>
+      </div>
+      <ul id="sidenav" class="action">
+      </ul>
+    </div>
+    <div id="content">
+      <!-- 消息发布 -->
+      <div class="msg_top">
+        <p class="title">往期发布</p>
+        <button id="btn_add_msg">创建新发布</button>
+      </div>
+
+      <div class="tbl_wrapper">
+        <table id="tbl_msgList">
+          <thead>
+            <tr>
+              <th class="tbl_date">发布时间</th>
+              <th class="tbl_title">发布标题</th>
+              <th class="tbl_operation">操作</th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- popup-->
+  <div id="msg_detail_dlg" class="popup-effect">
+    <div class="popup">
+      <form action="#" id="form_edit_msg">
+        <div class="center">
+          <div class="form_line">
+            <label for="input_edit_date">时间：</label>
+            <input type="text" name="id" id="input_edit_date" />
+
+            <label for="input_edit_title">标题：</label>
+            <input type="text" name="title" id="input_edit_title" />
+          </div>
+
+          <div class="form_area">
+            <label for="input_edit_body">内容：</label>
+            <input type="textarea" name="body" id="input_edit_body" />
+          </div>
+        </div>
+      </form>
+      <button id="btn_confirm_msg" class="btn_ok">确定</button>
+      <a class="close" href="#">&times;</a>
+    </div>
+  </div>
+  <!-- //popup -->
+</body>
+
+<script src="js/common/common.js"></script>
+<script src="js/common/sidebar.js"></script>
+<script src="js/common/table.js"></script>
+<script src="js/msg_release.js"></script>
+</html>

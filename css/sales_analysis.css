@@ -1,0 +1,71 @@
+@import url(mainframe.css);
+
+.part {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 10px 10px;
+    color: white;
+}
+
+.part_one {
+    height: 8rem;
+}
+.part_one .day{
+    border: 2px white solid;
+    border-radius: 10px;
+    flex:1;
+    margin: 0 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.part_one .day .num {
+    height: 5rem;
+    width: 100%;
+    text-align: center;
+}
+.part_one .day .num::after{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    margin-top: 10px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.9), transparent);
+}
+.part_one .day .tip {
+   align-self:flex-end;
+   font-size: 16px;
+   font-weight: 600;
+}
+
+.part_two {
+    color: white;
+}
+
+.week, .month, .plate {
+    border: 2px white solid;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+}
+/* 
+.part_three .month{
+    border: 2px white solid;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    
+} */
+
+.part_four {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.plate {
+    width: 550px;
+    height: 400px;
+}
