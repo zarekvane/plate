@@ -1,8 +1,3 @@
-.popup-effect {
-    visibility: visible !important;
-    opacity: 1 !important;
-}
-
 .status_bar {
     padding: 20px;
 }
@@ -15,3 +10,80 @@
     margin-right: 20px;
 }
 
+.popup {
+    width: 80%;
+    height: fit-content;
+    margin-top: 2%;
+}
+
+.top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.top .left {
+    background: red;
+    width: 44%;
+    height: fit-content;
+}
+
+.left .row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.left .row span {
+    width: 150px;
+    font-size: 1.1em;
+    background: wheat;
+    color: aquamarine;
+}
+
+.left .row input {
+    border-radius: 10%;
+    width: 200px;
+    height: 30px;
+    margin: 4px 4px;
+
+    font-size: 14px;
+    padding: 6px;
+    border-radius: 8px;
+}
+
+.left .row span {
+    text-align: right;
+}
+
+.top .right {
+    background: green;
+    width: 66%;
+}
+
+.bottom {
+    background: yellow;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: fit-content;
+    margin-top: 10px;
+}
+
+#plate_detail_wrapper {
+    width: 80%;
+    height: 240px;
+    background: pink;
+    padding: 10px;
+}
+
+.bottom button {
+    height: fit-content;
+    background: #fb7299;
+    color: #fff;
+    font-size: 16px;
+    padding: 6px 12px;
+    border-radius: 8px;
+}
