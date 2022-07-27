@@ -60,6 +60,7 @@ domFormUpload.onchange = () => {
         totalNumber.innerHTML = res.excel_sales
         errorNumber.innerHTML = res.except_sales
         compareNumber.innerHTML = res.except_amount
+ 
         if(res.compare && res.compare instanceof Array){
             res.compare.forEach((e) => {
                 excel_chart_data.flag.push(e.from_excel.date)
@@ -133,13 +134,11 @@ var excel_chart_option = {
             name: '后台账单',
             data: excel_chart_data.data_db,
             type: 'line',
-            stack: 'x',
         },
         {
             name: '人工账单',
             data: excel_chart_data.data_excel,
             type: 'line',
-            stack: 'x'
         }
     ]
 };
