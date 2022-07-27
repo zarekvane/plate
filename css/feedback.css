@@ -23,7 +23,6 @@
 }
 
 .top .left {
-    background: red;
     width: 44%;
     height: fit-content;
 }
@@ -38,8 +37,7 @@
 .left .row span {
     width: 150px;
     font-size: 1.1em;
-    background: wheat;
-    color: aquamarine;
+    color: purple;
 }
 
 .left .row input {
@@ -57,13 +55,30 @@
     text-align: right;
 }
 
-.top .right {
-    background: green;
+.right {
     width: 66%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
+.right .img_wrapper {
+    width: 200px;
+    height: 200px;
+    border: solid #fff;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.right img {
+    width: 100%;
+    object-fit: cover;
+}
+
+
 .bottom {
-    background: yellow;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -75,11 +90,10 @@
 #plate_detail_wrapper {
     width: 80%;
     height: 240px;
-    background: pink;
     padding: 10px;
 }
 
-.bottom button {
+.bottom .submit_btn {
     height: fit-content;
     background: #fb7299;
     color: #fff;

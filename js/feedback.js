@@ -37,7 +37,11 @@ const gFeedbackTable = new Table(
     fFillTr
 );
 
-const domFeatureSpanWrapper = document.getElementById("plate_detail_wrapper");
+var gCurrentEditIdx = -1;
+
+const featureSpanWrapper = new FeatureSpanWrapper(
+    document.getElementById("plate_detail_wrapper")
+);
 
 function fFillTr(tr, feedback) {
     let feedbackIdTd = document.createElement("td");
@@ -70,6 +74,8 @@ function fFillTr(tr, feedback) {
                     gFeedbackTable.dataList[idx].name = data.data.name;
                     gFeedbackTable.dataList[idx].feedbackTime =
                         data.data.feedback_create_time;
+                    gFeedbackTable.dataList[idx].orderTime =
+                        data.data.order_create_time;
                     gFeedbackTable.dataList[idx].orderId =
                         data.data.order_number;
                     gFeedbackTable.dataList[idx].userId = data.data.user_id;
@@ -81,11 +87,11 @@ function fFillTr(tr, feedback) {
                         data.data.feedback_description;
                     gFeedbackTable.dataList[idx].result =
                         data.data.feedback_result;
-                    gFeedbackTable.dataList[idx].plateDetails = JSON.stringify(
-                        data.data.plate_name
-                    );
+                    gFeedbackTable.dataList[idx].plateDetails =
+                        data.data.plate_name;
 
                     fillFeedbackDialog(idx);
+                    gCurrentEditIdx = idx;
                     window.location.href = "#feedback_dlg";
                 } else {
                     alert(data.data);
@@ -113,9 +119,15 @@ function getFeedbackStatus() {
     });
 }
 
-document.getElementById("a_read").onclick = function () {};
+document.getElementById("a_read").onclick = function () {
+    gFeedbackTable.clearAll();
+    getFeedbackList(1);
+};
 
-document.getElementById("a_unread").onclick = function () {};
+document.getElementById("a_unread").onclick = function () {
+    gFeedbackTable.clearAll();
+    getFeedbackList(0);
+};
 
 function getFeedbackList(status) {
     if (status == undefined) {
@@ -144,21 +156,64 @@ function getFeedbackList(status) {
     });
 }
 
+const domInputFeedbackTime = document.getElementById("input_feedback_time");
+const domInputOrderId = document.getElementById("input_order_id");
+const domInputOrderTime = document.getElementById("input_order_time");
+const domInputUserId = document.getElementById("input_user_id");
+const domInputName = document.getElementById("input_name");
+const domInputDescription = document.getElementById(
+    "input_feedback_description"
+);
+const domInputResult = document.getElementById("input_feedback_result");
+
 function fillFeedbackDialog(idx) {
     let feedback = gFeedbackTable.dataList[idx];
-    document.getElementById("input_feedback_time").value =
-        feedback.feedbackTime;
-    document.getElementById("input_order_id").value = feedback.orderId;
-    document.getElementById("input_order_time").value = feedback.orderTime;
-    document.getElementById("input_user_id").value = feedback.userId;
-    document.getElementById("input_name").value = feedback.name;
-    document.getElementById("input_feedback_description").value =
-        feedback.description;
-    document.getElementById("input_feedback_result").value =
-        feedback.result;
+    domInputFeedbackTime.value = feedback.feedbackTime;
+    domInputOrderId.value = feedback.orderId;
+    domInputOrderTime.value = feedback.orderTime;
+    domInputUserId.value = feedback.userId;
+    domInputName.value = feedback.name;
+    domInputDescription.value = feedback.description;
+    domInputResult.value = feedback.result;
+    setWebImg(
+        document.getElementById("user_img"),
+        ROOT_URL + feedback.userAvatar
+    );
+    setWebImg(
+        document.getElementById("plate_img"),
+        ROOT_URL + feedback.platePicture
+    );
+
+    featureSpanWrapper.clear();
+    feedback.plateDetails.forEach((e) => {
+        featureSpanWrapper.add(e);
+    });
 }
+
+document.getElementById("btn_submit").onclick = function () {
+    let data = {
+        feedback_number: gFeedbackTable.dataList[gCurrentEditIdx].feedbackId,
+        feedback_result: domInputResult.value,
+        order_number: gFeedbackTable.dataList[gCurrentEditIdx].orderId,
+        new_plate_name: featureSpanWrapper.getSpanList(),
+    };
+
+    gAjax({
+        url: "/admin/feedback/change",
+        method: "post",
+        type: "application/json",
+        data: JSON.stringify(data),
+        success: (data) => {
+            alert(data.data);
+        },
+        error: () => {
+            alert("审核请求发送失败");
+        },
+    });
+};
 
 window.onload = function () {
     getFeedbackStatus();
     getFeedbackList(0);
+    getFeedbackList(1);
 };
