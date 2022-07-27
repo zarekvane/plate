@@ -91,10 +91,13 @@ function fFillTr(tr, msg) {
                 method: "post",
                 url: "/admin/news/remove",
                 success: (data) => {
-                    alert(data.data);
+                    // alert(data.data);
+                    console.log(data);
                     if (data.code == 200) {
                         let idx = tr.rowIndex - 1;
                         gMsgTable.deleteRow(idx);
+                        // gMsgTable.refresh();
+                        // console.log(gMsgTable);
                     }
                 },
                 error: () => alert("删除请求失败"),
@@ -154,12 +157,12 @@ domBtnConfirmMsg.onclick = function () {
             url: "/admin/news/upload",
             type: "application/json",
             method: "post",
-            data: JSON.stringify([
+            data: JSON.stringify(
                 {
                     title: domInputTitle.value,
                     body: domInputBody.value
                 },
-            ]),
+            ),
             success: (data) => {
                 alert(data.data);
                 window.location.href = "#";
