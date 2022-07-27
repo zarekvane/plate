@@ -1,0 +1,186 @@
+@import url(mainframe.css);
+@import url(common/table.css);
+@import url(common/popup.css);
+.excel_top {
+    font-size: 18px;
+    height: fit-content;
+    color: azure;
+    margin: 10px 0;
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    justify-content:space-between;
+    align-items: center;
+    padding: 0 30px;
+    height: 100px;
+}
+
+.excel_top::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    margin-top: 10px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.9), transparent);
+}
+
+#uploadForm {
+    height: 100px;
+}
+
+.file_hidden{
+    width:100px;
+    height:40px;
+    position:absolute;
+    top:10px;
+    right: 100px;
+    z-index: 1;
+    opacity: 0;
+}
+.file_button{
+    width:100px;
+    color:#fff;
+    background: unset;
+    border-radius:5px;
+    position:absolute;
+    top:10px;
+    right: 100px;
+    border-radius: 8px;
+    border: white 2px solid;
+    height: 40px;
+    font-size: 16px;
+    padding: 6px;
+}
+.file_button:hover,.file_hidden:hover{
+    cursor: pointer;
+}
+
+.excel_chart_part {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 10px 50px;
+}
+
+.excel_chart_part .tip {
+    color: white;
+    font-size: larger;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.excel_chart_part .tip div{
+    margin: 10px;
+}
+
+.excel_chart_part .chart{
+    border: 2px white solid;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    width: 900px;
+    height: 400px;
+}
+
+.cut {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    margin-top: 10px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.9), transparent);
+}
+
+
+.excel_table_part {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.excel_table_title {
+    display: flex;
+    justify-content: space-around;
+    margin-right: 300px;
+    color: white;
+}
+
+
+.popup {
+    /* min-height: 580px; */
+    margin-top: 20px;
+}
+
+.popup form {
+    display: flex;
+    flex-flow: row wrap;
+    justify-items: flex-end;
+    justify-content: space-between;
+}
+
+.popup .right {
+    margin: auto 0;
+    margin-left: 20px;
+}
+
+.popup .left {
+    display: flex;
+    justify-content: space-around;
+    flex-flow: column wrap;
+    /* text-align: center; */
+}
+
+.popup .left .form_line {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 3px;
+    align-items: center;
+}
+
+.popup .left input,
+.popup .left select {
+    width: 12em;
+    height: 2em;
+    border: none;
+    color: #e3a095;
+    border-radius: 5px;
+    font-size: 16px;
+    padding: 0 2px;
+}
+
+.popup .left input[type='textarea'] {
+    min-height: 2em;
+    /* height: unset; */
+}
+
+.left input:focus,
+.left select:focus {
+    border: solid 1px #fb7299;
+}
+
+.popup .btn_ok {
+    background: #fb7299;
+    border-radius: 8px;
+    width: 70px;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+    padding: 6px;
+    float: right;
+    margin: 10px 0;
+}
+
+#plate_picture_wrapper {
+    width: 300px;
+}
+
+#user_avatar_wrapper img{
+    margin-top: 10px;
+    width: 200px;
+
+}
