@@ -21,98 +21,98 @@
       </ul>
     </div>
     <div id="content">
-        <div class="excel_top">
-            <form id="uploadForm" method="post" enctype="multipart/form-data">
-                <input class="file_hidden" type="file" name="file" id="btn_add_excel">
-                <label for="f_file">
-                    <input class="file_button" type="button" value="导入账单"/>
-                </label>
-            </form>
-            
+      <div class="excel_top">
+        <form id="uploadForm" method="post" enctype="multipart/form-data">
+          <input class="file_hidden" type="file" name="file" id="btn_add_excel">
+          <label for="f_file">
+            <input class="file_button" type="button" value="导入账单" />
+          </label>
+        </form>
+
+      </div>
+      <div class="excel_chart_part">
+        <div class="chart" id="excel_chart">折线图</div>
+        <div class="tip">
+          <div>总共订单数：<span id="total_number">0</span></div>
+          <div>异常订单数：<span id="error_number">0</span></div>
+          <div>金额差异：<span id="compare_number">0</span></div>
         </div>
-        <div class="excel_chart_part">
-            <div class="chart" id="excel_chart">折线图</div>
-            <div class="tip">
-                <div>总共订单数：<span id="total_number">0</span></div>
-                <div>异常订单数：<span id="error_number">0</span></div>
-                <div>金额差异：<span id="compare_number">0</span></div>
-            </div>
+      </div>
+      <div class="cut"></div>
+      <div class="excel_table_part">
+        <!-- 后台账单与人工账单表格 -->
+        <div class="excel_table_title">
+          <!-- 标题 -->
+          <h2>后台账单</h2>
+          <h2>人工账单</h2>
         </div>
-        <div class="cut"></div>
-        <div class="excel_table_part">
-            <!-- 后台账单与人工账单表格 -->
-            <div class="excel_table_title">
-                <!-- 标题 -->
-                <h2>后台账单</h2>
-                <h2>人工账单</h2>
-            </div>
         <div class="cut"></div>
 
         <div class="tbl_wrapper">
-            <table id="tbl_excelList">
-                <thead>
-                    <tr>
-                        <th class="tbl_date_excel">时间</th>
-                        <th class="tbl_amount_excel">消费金额</th>
-                        <th class="tbl_date_db">时间</th>
-                        <th class="tbl_amount_db">消费金额</th>
-                        <th class="tbl_detail">详情</th>
-                    </tr>
-                </thead>
-            </table>
+          <table id="tbl_excelList">
+            <thead>
+              <tr>
+                <th class="tbl_date_excel">时间</th>
+                <th class="tbl_amount_excel">消费金额</th>
+                <th class="tbl_date_db">时间</th>
+                <th class="tbl_amount_db">消费金额</th>
+                <th class="tbl_detail">详情</th>
+              </tr>
+            </thead>
+          </table>
         </div>
-        </div>
+      </div>
     </div>
-</div>
+  </div>
 
-<!-- popup-->
-<div id="order_detail_dlg" class="popup-effect">
+  <!-- popup-->
+  <div id="order_detail_dlg" class="popup-effect">
     <div class="popup">
-        <form action="#" id="form_order_detail">
-            <div class="left">
-            <div class="form_line">
-                <label for="input_detail_order_id">订单号：</label>
-                <input type="text" name="id" id="input_detail_order_id" disabled />
-            </div>
+      <form action="#" id="form_order_detail">
+        <div class="left">
+          <div class="form_line">
+            <label for="input_detail_order_id">订单号：</label>
+            <input type="text" name="id" id="input_detail_order_id" disabled />
+          </div>
 
-            <div class="form_line">
-                <label for="input_detail_user_id">学号/教职工号：</label>
-                <input type="text" name="id" id="input_detail_user_id" disabled />
-            </div>
+          <div class="form_line">
+            <label for="input_detail_user_id">学号/教职工号：</label>
+            <input type="text" name="id" id="input_detail_user_id" disabled />
+          </div>
 
-            <div class="form_line">
-                <label for="input_detail_name">姓名：</label>
-                <input type="text" name="name" id="input_detail_name" disabled />
-            </div>
+          <div class="form_line">
+            <label for="input_detail_name">姓名：</label>
+            <input type="text" name="name" id="input_detail_name" disabled />
+          </div>
 
-            <div class="form_line">
-                <label for="select_detail_identity">身份：</label>
-                <select name="identity" id="select_detail_identity" disabled>
-                <option value="0">学生</option>
-                <option value="1">老师</option>
-                </select>
-            </div>
+          <div class="form_line">
+            <label for="select_detail_identity">身份：</label>
+            <select name="identity" id="select_detail_identity" disabled>
+              <option value="0">学生</option>
+              <option value="1">老师</option>
+            </select>
+          </div>
 
-            <div class="form_line">
-                <label for="input_detail_description">订单描述：</label>
-                <input type="textarea" name="phone" id="input_detail_description" disabled />
-            </div>
+          <div class="form_line">
+            <label for="input_detail_description">订单描述：</label>
+            <input type="textarea" name="phone" id="input_detail_description" disabled />
+          </div>
 
-            <div class="form_line">
-                <label for="input_detail_amount">消费金额：</label>
-                <input type="tel" name="phone" id="input_detail_amount" disabled />
-            </div>
-            </div>
+          <div class="form_line">
+            <label for="input_detail_amount">消费金额：</label>
+            <input type="tel" name="phone" id="input_detail_amount" disabled />
+          </div>
+        </div>
 
-            <div class="right">
-                <div id="user_avatar_wrapper"></div>
-                <div id="plate_picture_wrapper"></div>
-            </div>
-        </form>
-        <a class="close" href="#">&times;</a>
+        <div class="right">
+          <div id="user_avatar_wrapper"></div>
+          <div id="plate_picture_wrapper"></div>
+        </div>
+      </form>
+      <a class="close" href="#">&times;</a>
     </div>
-</div>
-<!-- //popup -->
+  </div>
+  <!-- //popup -->
 </body>
 
 <script src="js/common/common.js"></script>
