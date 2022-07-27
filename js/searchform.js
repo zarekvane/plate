@@ -95,15 +95,30 @@ class SearchForm {
 
             let url = _this.url + "?";
 
+            let isFirstParam = true;
+
             if (userId != "") {
                 url += `user_id=${userId}`;
+                isFirstParam = false;
             }
 
             if (name != "") {
-                url += `&name=${name}`;
+                if (isFirstParam) {
+                    isFirstParam = false
+                } else {
+                    url += "&";
+                }
+
+                url += `name=${name}`;
             }
 
             if (identity != "") {
+                if (isFirstParam) {
+                    isFirstParam = false
+                } else {
+                    url += "&";
+                }
+
                 url += `&identity=${parseInt(identity)}`;
             }
 
