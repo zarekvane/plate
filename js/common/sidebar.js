@@ -34,10 +34,27 @@
         let span = document.createElement("span");
         span.innerHTML = e[1];
 
-        span.onclick = function () {
-            window.sessionStorage.setItem("plate_nav_idx", idx);
-            window.location.href = e[0];
-        };
+        if (e[0] == "logout") {
+            span.onclick = function () {
+                gAjax({
+                    url: "/admin/logout",
+                    method: "post",
+                    success: (data) => {
+                        if (data.code == 200) {
+                            window.sessionStorage.removeItem("plate_nav_idx");
+                            window.location.href = "login.html";
+                        }
+
+                        alert(data.data);
+                    },
+                });
+            };
+        } else {
+            span.onclick = function () {
+                window.sessionStorage.setItem("plate_nav_idx", idx);
+                window.location.href = e[0];
+            };
+        }
 
         li.appendChild(span);
 
