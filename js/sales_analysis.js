@@ -3,7 +3,6 @@ function getStatisticsData(type, flag) {
         gAjax({
             url: `/admin/statistics/${type}?flag=${flag}`,
             method: "get",
-            // async: false,
             success: function (data) {
                 if (data.code == 200) {
                     resolve(data.data)
@@ -23,7 +22,6 @@ function getCompareData(type, date) {
         gAjax({
             url: `/admin/statistics/${type}?date=${date}`,
             method: "get",
-            async: false,
             success: function (data) {
                 if (data.code == 200) {
                     resolve(data.data)
