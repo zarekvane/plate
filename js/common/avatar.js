@@ -4,7 +4,7 @@ class AvatarControl {
     constructor(
         slogan = "",
         uploadUrl = "/admin/user/upload/avatar",
-        src = "images/default_avatar.svg"
+        src = ""
     ) {
         this.slogan = slogan;
         this.src = src;
@@ -32,9 +32,11 @@ class AvatarControl {
         avatarPreview.classList.add("avatar_preview");
 
         this.img = document.createElement("img");
-        this.src = this.img.src = this.src == undefined ? "" : this.src;
 
-        this.img.src = this.src;
+        if (this.src == "") {
+            this.img.src = "images/default_avatar.svg";
+        }
+
         avatarPreview.appendChild(this.img);
 
         this.fileInput = document.createElement("input");
@@ -59,7 +61,8 @@ class AvatarControl {
                     },
                     success: function (data) {
                         if (data.code == 200) {
-                            setWebImg(_this.img, `${ROOT_URL}${data.data}`);
+                            _this.src = data.data
+                            setWebImg(_this.img, `${ROOT_URL}${_this.src}`);
                         } else {
                             alert(data.data);
                         }
@@ -93,11 +96,12 @@ class AvatarControl {
         this.src = src;
 
         gAjaxImg({
-            url: src,
+            url: `${ROOT_URL}${src}`,
             success: (data) => {
                 _this.img.src = data;
             },
             error: () => {
+                _this.img.src = "images/default_avatar.svg"
                 if (hasAlert) {
                     alert(`图片访问失败: ${_this.src}`);
                 }

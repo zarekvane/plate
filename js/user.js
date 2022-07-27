@@ -74,13 +74,14 @@ function fFillTr(tr, user) {
             method: "get",
             success: function (data) {
                 if (data.code == 200) {
+                    console.log(data.data);
                     let idx = tr.rowIndex - 1;
                     gUserTable.dataList[idx].id = data.data.user_id;
                     gUserTable.dataList[idx].phone = data.data.cellphone_number;
                     gUserTable.dataList[idx].address = data.data.address;
                     gUserTable.dataList[idx].sex = data.data.sex;
                     gUserTable.dataList[idx].nickname = data.data.nickname;
-                    gUserTable.dataList[idx].avatar = `${ROOT_URL}${data.data.avatar_url}`;
+                    gUserTable.dataList[idx].avatar = data.data.avatar_url;
                     showEditUserDialog(idx);
                 } else {
                     alert(data.data);
@@ -164,7 +165,6 @@ function fillEditUserDialog(user) {
 
     // domInputAvatar
     avatarControl.setWebSrc(user.avatar, false);
-    avatarControl.img.src = user.avatar;
 }
 
 // 显示第idx项用户的对话框
