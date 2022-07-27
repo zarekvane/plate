@@ -45,9 +45,9 @@ const domSelectIdentity = document.getElementById("select_detail_identity");
 const domInputDescription = document.getElementById("input_detail_description");
 const domInputAmount = document.getElementById("input_detail_amount");
 
-var gOrderTable = new Table(document.getElementById("tbl_orders"), [], fFillTr);
+const gOrderTable = new Table(document.getElementById("tbl_orders"), [], fFillTr);
 
-var gSearchForm = new SearchForm({
+const gSearchForm = new SearchForm({
     url: "/admin/order/query/list",
 
     success: function (data) {

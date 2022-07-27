@@ -26,3 +26,5 @@ class Feedback {
         this.userAvatar = userAvatar;
     }
 }
+
+const gFeedbackTable = new Table(document.getElementById("tbl_feedbacks"), [], fFillTr)
