@@ -7,7 +7,7 @@ class User {
         nickname = "",
         address = "",
         password = "",
-        avatar = "images/default_avatar.svg"
+        avatar = ""
     ) {
         this.id = id;
         this.name = name;
@@ -163,6 +163,7 @@ function fillEditUserDialog(user) {
     domInputPassword.value = user.password;
 
     // domInputAvatar
+    avatarControl.setWebSrc(user.avatar, false);
     avatarControl.img.src = user.avatar;
 }
 
