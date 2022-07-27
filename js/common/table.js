@@ -29,13 +29,13 @@ class Table {
 
     insertRow(pos, data) {
         this.dataList.splice(pos, 0, data);
-        let tr = this.tbody.insertRow(pos + 1);
+        let tr = this.tbody.insertRow(pos);
         this.fFillTr(tr, data);
     }
 
     deleteRow(pos) {
         this.dataList.splice(pos, 1);
-        this.tbody.deleteRow(pos + 1);
+        this.tbody.deleteRow(pos);
     }
 
     clearAll() {
