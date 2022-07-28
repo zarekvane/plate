@@ -41,14 +41,14 @@
 }
 
 .left .row input {
-    border-radius: 10%;
+    border-radius: 8px;
+    border: none;
     width: 200px;
     height: 30px;
     margin: 4px 4px;
 
     font-size: 14px;
     padding: 6px;
-    border-radius: 8px;
 }
 
 .left .row span {
@@ -87,10 +87,21 @@
     margin-top: 10px;
 }
 
+.bottom span {
+    min-width: fit-content;
+    padding: 10px;
+    font-size: 1.1em;
+    color: purple;
+}
+
 #plate_detail_wrapper {
     width: 80%;
     height: 240px;
     padding: 10px;
+}
+
+.bottom .btn_area {
+    height: 100px;
 }
 
 .bottom .submit_btn {
@@ -100,4 +111,5 @@
     font-size: 16px;
     padding: 6px 12px;
     border-radius: 8px;
+    margin-top: 20px;
 }

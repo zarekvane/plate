@@ -14,12 +14,26 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    padding: 6px;
-    margin: 3px;
-    font-size: 15px;
+    margin: 4px;
     color: #fff;
-    border-radius: 10%;
+    border-radius: 10px;
     background: #1db859;
+}
+
+.feature_span .span_content {
+    width: 5em;
+    background: inherit;
+    border: none;
+    color: white;
+    font-size: 15px;
+    height: 25px;
+    border-radius: 4px;
+    text-overflow: ellipsis;
+}
+
+.feature_span .span_content:focus {
+    background: #fff;
+    color: #000;
 }
 
 .feature_span .span_close {

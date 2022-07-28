@@ -1,31 +1,21 @@
 class FeatureSpanWrapper {
     constructor(dom) {
         this.dom = dom;
-        this.spanMap = new Map();
     }
 
     add(content) {
-        if (!this.spanMap.has(content)) {
-            let span = this.createFeatureSpan(content);
-            this.spanMap.set(content, span);
-            this.dom.appendChild(span);
-        }
-    }
-
-    delete(content) {
-        if (this.spanMap.has(content)) {
-            this.spanMap.get(content).remove();
-            this.spanMap.delete(content);
-        }
+        let span = this.createFeatureSpan(content);
+        this.dom.appendChild(span);
     }
 
     getSpanList() {
-        return [...this.spanMap.keys()]
+        return Array.from(this.dom.children)
+            .map((e) => e.getElementsByTagName("input")[0].value.trim())
+            .filter((e) => e != "");
     }
 
     clear() {
         this.dom.innerHTML = "";
-        this.spanMap = new Map();
     }
 
     createFeatureSpan(content) {
@@ -36,16 +26,21 @@ class FeatureSpanWrapper {
 
         let domSpan = document.createElement("span");
         domSpan.classList.add("feature_span");
-        domSpan.innerHTML = `<span>${content}</span>`;
+
+        let contentInput = document.createElement("input");
+        contentInput.value = content;
+        contentInput.placeholder = "请输入...";
+        contentInput.classList.add("span_content")
+        domSpan.appendChild(contentInput);
+
+        // domSpan.innerHTML = `<span>${content}</span>`;
 
         let domButton = document.createElement("button");
         domButton.classList.add("span_close");
         domButton.innerHTML = "&times;";
 
-        let _this = this;
-
         domButton.onclick = function () {
-            _this.delete(content);
+            domSpan.remove();
         };
 
         domSpan.appendChild(domButton);

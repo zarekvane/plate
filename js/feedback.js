@@ -212,6 +212,10 @@ document.getElementById("btn_submit").onclick = function () {
     });
 };
 
+document.getElementById("btn_add_span").onclick = function () {
+    featureSpanWrapper.add("");
+}
+
 window.onload = function () {
     getFeedbackStatus();
     getFeedbackList(0);
